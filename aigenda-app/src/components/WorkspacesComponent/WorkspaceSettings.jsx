@@ -357,14 +357,14 @@ const WorkspaceSettings = ({ openCreateSpace }) => {
                 <span>Workspace Activity</span>
                 <span style={{color:'#64748b'}}>Notify everyone when new tasks or notes are created.</span>
             </div>
-             <div onClick={(prev)=>{setActvBtn({...prev, wsActivity:!actvBtn.wsActivity})}} className={actvBtn.wsActivity ? "toggle-switch active" :"toggle-switch"}></div>
+             <div onClick={() => {setActvBtn(prev => ({  ...prev,wsActivity: !prev.wsActivity }));}} className={actvBtn.wsActivity ? "toggle-switch active" :"toggle-switch"}></div>
           </div>
           <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',width:'100%',marginBottom:'15px',borderTop:'1px solid #e2e8f0',paddingTop:'5px'}}>
             <div style={{display:'flex',flexDirection:'column',alignItems:'flex-start'}}>
                 <span>Members Updates</span>
                 <span style={{color:'#64748b'}}>Alert admins when members join or leave the workspace.</span>
             </div>
-            <div onClick={(prev)=>{setActvBtn({...prev, members:!actvBtn.members})}} className={actvBtn.members ? "toggle-switch active" :"toggle-switch"}></div>
+            <div onClick={()=> {setActvBtn(prev => ({...prev, members:!prev.members}))}} className={actvBtn.members ? "toggle-switch active" :"toggle-switch"}></div>
           </div>
         </div>
         <div className="danger-zone">

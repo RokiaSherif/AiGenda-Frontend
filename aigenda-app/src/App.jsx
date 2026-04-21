@@ -22,8 +22,11 @@ import WorkspaceSettings from './components/WorkspacesComponent/WorkspaceSetting
 import WorkspaceOverview from './components/WorkspacesComponent/WorkspaceOverview';
 import SpaceOverview from './components/WorkspacesComponent/SpaceOverview';
 import WorkspaceTaskSpecific from './components/WorkspacesComponent/WorkspaceTaskSpecific';
-import ImgNote from './components/WorkspacesComponent/ImgNote';
 import DrawNote from './components/WorkspacesComponent/DrawNote';
+import TextNote from './components/WorkspacesComponent/TextNote';
+import InFocusMode from './components/WorkspacesComponent/focusMode/InFocusMode';
+import SessionCompletion from './components/WorkspacesComponent/focusMode/SessionCompletion';
+import Setup from './components/WorkspacesComponent/focusMode/Setup';
 function App() {
   return (
     <>
@@ -45,6 +48,12 @@ function App() {
         <Route path='/workspaceSettings' element={<WorkspaceSettings/>}/>
         <Route path='/spaceoverview' element={<SpaceOverview/>}/>
         <Route path='/workspacetaskspecific' element={<WorkspaceTaskSpecific/>}/>
+        <Route path='/drawnote' element={<DrawNote/>}/>
+        <Route path='/textnote' element={<TextNote/>}/>
+        {/* Focus Mode */}
+        <Route path='/infocusmode' element={<InFocusMode/>}/>
+        <Route path='/sessioncompleted' element={<SessionCompletion/>}/>
+        <Route path='/sessionsetup' element={<Setup/>}/>
         {/*  */}
         <Route path='/analytics' element={<Analytics/>}/>
         <Route path='/community' element={<Community/>}/>

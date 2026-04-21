@@ -1,4 +1,5 @@
 import { ImageIcon, Mic, Palette, TextCursorIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 const CreateNote = ({openCreateNote, setOpenCreateNote, setOpenNoteType, openNoteType}) =>{
     return(
         <div className="overlay" onClick={()=>{setOpenCreateNote(false)}}>
@@ -13,14 +14,18 @@ const CreateNote = ({openCreateNote, setOpenCreateNote, setOpenNoteType, openNot
             <div className="note-type">
                 <h5 style={{color:'#917bff'}}>CHOOSE NOTE TYPE</h5>
                 <div className="boxes">
-                <div className="box">
-                    <span><TextCursorIcon/></span>
-                    <p>TEXT</p>
-                    </div>
-                <div className="box">
-                    <span><Palette/></span>
-                    <p>HAND DRAW</p>
+                <Link to={'/textnote'} style={{flex:'1'}}>
+                <div className="box" onClick={()=>{setOpenCreateNote(false)}}>
+                <span><TextCursorIcon/></span>
+                <p>TEXT</p>
                 </div>
+                </Link>
+                <Link to={'/drawnote'} style={{flex:'1'}}>
+                <div className="box" onClick={()=>{setOpenCreateNote(false) }}>
+                <span><Palette/></span>
+                <p>HAND DRAW</p>
+                </div>
+                </Link>
                 <div className="box" onClick={()=>{setOpenCreateNote(false); setOpenNoteType({...openNoteType, voice:true})}}>
                     <span><Mic/></span>
                     <p>VOICE</p>

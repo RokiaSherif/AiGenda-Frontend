@@ -7,13 +7,14 @@ import SidebarofWorkspace from "./SidebarofWorkspace";
 import { useState } from "react";
 import CreateNewTask from "./CreateNewTask";
 import { Link } from "react-router-dom";
+import HeaderOfWS from "./HeaderOfWS";
 const SpaceTasks = ()=>{
   const [openCreateTask, setOpenCreateTask] = useState(false);
     return(
         <div className="app-container">
         <SidebarofWorkspace/>
         <main className="main-content" style={{marginLeft:"130px"}}>
-       <Header/>
+       <HeaderOfWS/>
       <div className="page-container">
         <TopSection/>
         <div style={{display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "2rem"}}>

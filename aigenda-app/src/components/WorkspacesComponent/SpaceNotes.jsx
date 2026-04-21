@@ -10,6 +10,7 @@ import { useState } from "react";
 import CreateNote from "./CreateNote";
 import ImgNote from "./ImgNote";
 import VoiceNote from "./VoiceNote";
+import HeaderOfWS from "./HeaderOfWS";
 const SpaceNotes = () => {
   const [openCreateNote, setOpenCreateNote] = useState(false);
   const [openNoteType, setOpenNoteType] = useState({
@@ -20,7 +21,7 @@ const SpaceNotes = () => {
     <div className="app-container">
       <SidebarofWorkspace />
       <main className="main-content" style={{ marginLeft: "130px",boxSizing:'border-box' }}>
-        <Header />
+        <HeaderOfWS />
         <div className="page-container" style={{position:'relative'}}>
           <TopSection />
           <button onClick={()=>{setOpenCreateNote(true)}}>

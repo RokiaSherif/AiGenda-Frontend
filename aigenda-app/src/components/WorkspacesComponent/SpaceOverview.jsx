@@ -4,6 +4,7 @@ import TopSection from "./TopSection";
 import './stylesofWS.css';
 import '../HomeComponent/home.css';
 import { Link } from "react-router-dom";
+import HeaderOfWS from "./HeaderOfWS";
 // --- MOCK DATA ---
 const tasksData = [
   {
@@ -75,131 +76,128 @@ const SpaceOverview = () =>{
         <div className="app-container">
             <SidebarofWorkspace/>
             <div className="main-content" style={{marginLeft:'150px'}}>
-            <Header/>
+            <HeaderOfWS/>
             <div className="page-container">
-                <TopSection/>
-<div className="tasks-notes-wrapper">
-      
-      {/* LEFT COLUMN: TASKS */}
-      <div className="section-card">
-        
-        {/* Controls Header */}
-        <div className="tasks-header-controls">
-          <div className="view-toggle">
-            <button className="toggle-btn active">
-              <span>≡</span> List
-            </button>
-            <button className="toggle-btn">
-              <span>◫</span> Board
-            </button>
-          </div>
-          <button className="add-btn">+</button>
-        </div>
-
-        {/* Task Table */}
-        <table className="task-table">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Progress</th>
-              <th>Urgency</th>
-              <th>Assigned to</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tasksData.map((task) => (
-              <tr key={task.id}>
-                {/* Feature Column with Checkbox */}
-                <td>
-                  <div className="task-feature-cell">
-                    <div className={`custom-checkbox ${task.isCompleted ? 'checked' : ''}`}>
-                      {task.isCompleted && <span className="check-icon">✓</span>}
-                    </div>
-                    <span>{task.title}</span>
-                  </div>
-                </td>
+            <TopSection/>
+            <div className="tasks-notes-wrapper">
+              {/* LEFT COLUMN: TASKS */}
+              <div className="section-card">
                 
-                {/* Progress Column */}
-                <td>
-                  <div className="status-badge" style={{ color: task.progress.color }}>
-                    <span>{task.progress.icon}</span> {task.progress.status}
+                {/* Controls Header */}
+                <div className="tasks-header-controls">
+                  <div className="view-toggle">
+                    <button className="toggle-btn active">
+                      <span>≡</span> List
+                    </button>
+                    <button className="toggle-btn">
+                      <span>◫</span> Board
+                    </button>
                   </div>
-                </td>
+                  <button className="add-btn">+</button>
+                </div>
 
-                {/* Urgency Column */}
-                <td>
-                  <div className="urgency-badge">
-                    <span style={{ color: task.urgency.color }}>ill</span> {task.urgency.level}
-                  </div>
-                </td>
+                {/* Task Table */}
+                <table className="task-table">
+                  <thead>
+                    <tr>
+                      <th>Feature</th>
+                      <th>Progress</th>
+                      <th>Urgency</th>
+                      <th>Assigned to</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {tasksData.map((task) => (
+                      <tr key={task.id}>
+                        {/* Feature Column with Checkbox */}
+                        <td>
+                          <div className="task-feature-cell">
+                            <div className={`custom-checkbox ${task.isCompleted ? 'checked' : ''}`}>
+                              {task.isCompleted && <span className="check-icon">✓</span>}
+                            </div>
+                            <span>{task.title}</span>
+                          </div>
+                        </td>
+                        
+                        {/* Progress Column */}
+                        <td>
+                          <div className="status-badge" style={{ color: task.progress.color }}>
+                            <span>{task.progress.icon}</span> {task.progress.status}
+                          </div>
+                        </td>
 
-                {/* Assigned To Column */}
-                <td>
-                  <div className="avatar-group">
-                    {task.assignees.map((avatar, index) => (
-                      <img key={index} src={avatar} alt="Assignee" className="avatar-img" />
+                        {/* Urgency Column */}
+                        <td>
+                          <div className="urgency-badge">
+                            <span style={{ color: task.urgency.color }}>ill</span> {task.urgency.level}
+                          </div>
+                        </td>
+
+                        {/* Assigned To Column */}
+                        <td>
+                          <div className="avatar-group">
+                            {task.assignees.map((avatar, index) => (
+                              <img key={index} src={avatar} alt="Assignee" className="avatar-img" />
+                            ))}
+                          </div>
+                        </td>
+                      </tr>
                     ))}
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                  </tbody>
+                </table>
 
-        {/* Footer Link */}
-         <Link to={'/workspaceTasks'}>
-          <button className="view-all-tasks-btn">view all tasks</button>
-         </Link>
-      </div>
-
-      {/* RIGHT COLUMN: RECENT NOTES */}
-      <div className="notes-container" >
-        <div className="section-header-flex">
-          <h2 className="notes-header">Recent notes</h2>
-          <a href="#all-notes" className="notes-link">view all</a>
-        </div>
-
-        <div className="notes-list">
-          {notesData.map((note) => (
-            <div key={note.id} className="note-card">
-              
-              <div className="note-title-wrap">
-                <span className="note-icon">{note.icon}</span>
-                <h3 className="note-title">{note.title}</h3>
+                {/* Footer Link */}
+                <Link to={'/workspaceTasks'}>
+                  <button className="view-all-tasks-btn">view all tasks</button>
+                </Link>
               </div>
 
-              {/* Conditional Rendering based on Note Type */}
-              {note.type === 'text' && (
-                <p className="note-text">{note.content}</p>
-              )}
+              {/* RIGHT COLUMN: RECENT NOTES */}
+              <div className="notes-container" >
+                <div className="section-header-flex">
+                  <h2 className="notes-header">Recent notes</h2>
+                  <a href="#all-notes" className="notes-link">view all</a>
+                </div>
 
-              {note.type === 'image' && (
-                <>
-                  <img src={note.image} alt="Note Attachment" className="note-image" />
-                  <p className="note-text">{note.content}</p>
-                </>
-              )}
+                <div className="notes-list">
+                  {notesData.map((note) => (
+                    <div key={note.id} className="note-card">
+                      
+                      <div className="note-title-wrap">
+                        <span className="note-icon">{note.icon}</span>
+                        <h3 className="note-title">{note.title}</h3>
+                      </div>
 
-              {note.type === 'list' && (
-                <div className="note-checklist">
-                  {note.items.map((item) => (
-                    <div key={item.id} className={`checklist-item ${item.isSubItem ? 'sub-item' : ''}`}>
-                      <input type="checkbox"/>
-                      <span>{item.text}</span>
+                      {/* Conditional Rendering based on Note Type */}
+                      {note.type === 'text' && (
+                        <p className="note-text">{note.content}</p>
+                      )}
+
+                      {note.type === 'image' && (
+                        <>
+                          <img src={note.image} alt="Note Attachment" className="note-image" />
+                          <p className="note-text">{note.content}</p>
+                        </>
+                      )}
+
+                      {note.type === 'list' && (
+                        <div className="note-checklist">
+                          {note.items.map((item) => (
+                            <div key={item.id} className={`checklist-item ${item.isSubItem ? 'sub-item' : ''}`}>
+                              <input type="checkbox"/>
+                              <span>{item.text}</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
                     </div>
                   ))}
                 </div>
-              )}
+              </div>
 
             </div>
-          ))}
-        </div>
-      </div>
-
-    </div>
             </div>
-
-
             </div>
         </div>
     );
