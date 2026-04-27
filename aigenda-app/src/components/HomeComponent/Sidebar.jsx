@@ -23,9 +23,9 @@ const Sidebar = ()=>{
               <LayoutDashboard/>
               <span>Workspaces</span>
             </NavLink>
-            <NavLink to='/analytics' className={({isActive})=> isActive? "nav-item active":"nav-item"}>
+            <NavLink to='/dashboard' className={({isActive})=> isActive? "nav-item active":"nav-item"}>
               <Layers/>
-              <span>Analytics</span>
+              <span>Dashboard</span>
             </NavLink>
             <NavLink to='/community' className={({isActive})=> isActive? "nav-item active":"nav-item"}>
               <Users/>

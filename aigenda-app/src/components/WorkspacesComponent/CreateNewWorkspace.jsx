@@ -185,7 +185,7 @@ const CreateNewWorkspace = ({ openDialog, setOpenDialog }) => {
                             marginTop: "35px",
                           }}
                         >
-                          {icons[inputValues.iconCode]}{" "}
+                          {icons[inputValues.iconCode]}
                         </div>
                       ) : (
                         <div
@@ -225,6 +225,7 @@ const CreateNewWorkspace = ({ openDialog, setOpenDialog }) => {
                       {Object.keys(icons).map((iconName) => (
                         <div
                           key={iconName}
+                          className="icon-box"
                           onClick={() => handleSelect(iconName)}
                           style={{
                             padding: "10px",

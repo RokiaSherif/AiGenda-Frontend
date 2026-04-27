@@ -73,133 +73,132 @@ const notesData = [
 
 const SpaceOverview = () =>{
     return(
-        <div className="app-container">
-            <SidebarofWorkspace/>
-            <div className="main-content" style={{marginLeft:'150px'}}>
-            <HeaderOfWS/>
-            <div className="page-container">
-            <TopSection/>
-            <div className="tasks-notes-wrapper">
-              {/* LEFT COLUMN: TASKS */}
-              <div className="section-card">
-                
-                {/* Controls Header */}
-                <div className="tasks-header-controls">
-                  <div className="view-toggle">
-                    <button className="toggle-btn active">
-                      <span>≡</span> List
-                    </button>
-                    <button className="toggle-btn">
-                      <span>◫</span> Board
-                    </button>
-                  </div>
-                  <button className="add-btn">+</button>
-                </div>
+      <div className="app-container">
+      <SidebarofWorkspace/>
+      <div className="main-content">
+      <HeaderOfWS/>
+      <div className="page-container">
+      <TopSection/>
+      <div className="tasks-notes-wrapper">
+      {/* LEFT COLUMN: TASKS */}
+      <div className="section-card">
+      {/* Controls Header */}
+      <div className="tasks-header-controls">
+      <div className="view-toggle">
+      <button className="toggle-btn active">
+      <span>≡</span> List
+      </button>
+      <button className="toggle-btn">
+      <span>◫</span> Board
+      </button>
+      </div>
+      <button className="add-btn">+</button>
+      </div>
 
-                {/* Task Table */}
-                <table className="task-table">
-                  <thead>
-                    <tr>
-                      <th>Feature</th>
-                      <th>Progress</th>
-                      <th>Urgency</th>
-                      <th>Assigned to</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {tasksData.map((task) => (
-                      <tr key={task.id}>
-                        {/* Feature Column with Checkbox */}
-                        <td>
-                          <div className="task-feature-cell">
-                            <div className={`custom-checkbox ${task.isCompleted ? 'checked' : ''}`}>
-                              {task.isCompleted && <span className="check-icon">✓</span>}
-                            </div>
-                            <span>{task.title}</span>
-                          </div>
-                        </td>
-                        
-                        {/* Progress Column */}
-                        <td>
-                          <div className="status-badge" style={{ color: task.progress.color }}>
-                            <span>{task.progress.icon}</span> {task.progress.status}
-                          </div>
-                        </td>
+      {/* Task Table */}
+      
+      <table className="task-table">
+      <thead>
+      <tr>
+      <th>Feature</th>
+      <th>Progress</th>
+      <th>Urgency</th>
+      <th>Assigned to</th>
+      </tr>
+      </thead>
+      <tbody>
+      {tasksData.map((task) => (
+      <tr key={task.id}>
+      {/* Feature Column with Checkbox */}
+      <td style={{ padding:'10px'}}>
+      <div className="task-feature-cell">
+      <div className={`custom-checkbox ${task.isCompleted ? 'checked' : ''}`}>
+      {task.isCompleted && <span className="check-icon">✓</span>}
+      </div>
+      <span id="title">{task.title}</span>
+      </div>
+      </td>
+      {/* Progress Column */}
+      <td>
+      <div className="status-badge" style={{ color: task.progress.color }}>
+      <span>{task.progress.icon}</span> {task.progress.status}
+      </div>
+      </td>
 
-                        {/* Urgency Column */}
-                        <td>
-                          <div className="urgency-badge">
-                            <span style={{ color: task.urgency.color }}>ill</span> {task.urgency.level}
-                          </div>
-                        </td>
+      {/* Urgency Column */}
+      <td>
+      <div className="urgency-badge">
+      <span style={{ color: task.urgency.color }}>ill</span> {task.urgency.level}
+      </div>
+      </td>
 
-                        {/* Assigned To Column */}
-                        <td>
-                          <div className="avatar-group">
-                            {task.assignees.map((avatar, index) => (
-                              <img key={index} src={avatar} alt="Assignee" className="avatar-img" />
-                            ))}
-                          </div>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+      {/* Assigned To Column */}
+      <td>
+      <div className="avatar-group">
+      {task.assignees.map((avatar, index) => (
+      <img key={index} src={avatar} alt="Assignee" className="avatar-img" />
+      ))}
+      </div>
+      </td>
+      </tr>
+      ))}
+      </tbody>
+      </table>
 
-                {/* Footer Link */}
-                <Link to={'/workspaceTasks'}>
-                  <button className="view-all-tasks-btn">view all tasks</button>
-                </Link>
-              </div>
+      {/* Footer Link */}
+      <Link to={'/workspaceTasks'}>
+      <button className="view-all-tasks-btn">view all tasks</button>
+      </Link>
+      </div>
 
-              {/* RIGHT COLUMN: RECENT NOTES */}
-              <div className="notes-container" >
-                <div className="section-header-flex">
-                  <h2 className="notes-header">Recent notes</h2>
-                  <a href="#all-notes" className="notes-link">view all</a>
-                </div>
+      {/* RIGHT COLUMN: RECENT NOTES */}
+      <div className="notes-container" >
+      <div className="section-header-flex">
+      <h2 className="notes-header">Recent notes</h2>
+      <a href="#all-notes" className="notes-link">view all</a>
+      </div>
 
-                <div className="notes-list">
-                  {notesData.map((note) => (
-                    <div key={note.id} className="note-card">
-                      
-                      <div className="note-title-wrap">
-                        <span className="note-icon">{note.icon}</span>
-                        <h3 className="note-title">{note.title}</h3>
-                      </div>
+      <div className="notes-list">
+      {notesData.map((note) => (
+      <div key={note.id} className="note-card">
 
-                      {/* Conditional Rendering based on Note Type */}
-                      {note.type === 'text' && (
-                        <p className="note-text">{note.content}</p>
-                      )}
+      <div className="note-title-wrap">
+      <span className="note-icon">{note.icon}</span>
+      <h3 className="note-title">{note.title}</h3>
+      </div>
 
-                      {note.type === 'image' && (
-                        <>
-                          <img src={note.image} alt="Note Attachment" className="note-image" />
-                          <p className="note-text">{note.content}</p>
-                        </>
-                      )}
+      {/* Conditional Rendering based on Note Type */}
+      {note.type === 'text' && (
+      <p className="note-text">{note.content}</p>
+      )}
 
-                      {note.type === 'list' && (
-                        <div className="note-checklist">
-                          {note.items.map((item) => (
-                            <div key={item.id} className={`checklist-item ${item.isSubItem ? 'sub-item' : ''}`}>
-                              <input type="checkbox"/>
-                              <span>{item.text}</span>
-                            </div>
-                          ))}
-                        </div>
-                      )}
+      {note.type === 'image' && (
+      <>
+      <img src={note.image} alt="Note Attachment" className="note-image" />
+      <p className="note-text">{note.content}</p>
+      </>
+      )}
 
-                    </div>
-                  ))}
-                </div>
-              </div>
+      {note.type === 'list' && (
+      <div className="note-checklist">
+      {note.items.map((item) => (
+      <div key={item.id} className={`checklist-item ${item.isSubItem ? 'sub-item' : ''}`}>
+      <input type="checkbox"/>
+      <span>{item.text}</span>
+      </div>
+      ))}
+      </div>
+      )}
 
-            </div>
-            </div>
-            </div>
-        </div>
+      </div>
+      ))}
+      </div>
+      </div>
+
+      </div>
+      </div>
+      </div>
+      </div>
     );
 };
 export default SpaceOverview;

@@ -20,7 +20,7 @@ const SpaceNotes = () => {
   return (
     <div className="app-container">
       <SidebarofWorkspace />
-      <main className="main-content" style={{ marginLeft: "130px",boxSizing:'border-box' }}>
+      <main className="main-content">
         <HeaderOfWS />
         <div className="page-container" style={{position:'relative'}}>
           <TopSection />

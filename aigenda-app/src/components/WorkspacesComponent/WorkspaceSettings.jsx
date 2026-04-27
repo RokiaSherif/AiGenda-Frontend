@@ -45,29 +45,21 @@ const WorkspaceSettings = ({ openCreateSpace }) => {
   return (
     <div className="app-container">
       <SidebarofWorkspace />
-      <div className="main-container" style={{ marginLeft: "150px" }}>
+      <div className="main-container">
         <h1 style={{ marginBottom: "0" }}>Workspace Settings</h1>
         <p style={{ color: "#64748B", marginTop: "0" }}>
           Manage your workspace configuration, team members, and preferences.
         </p>
         <div className="general-box">
           <h4>General</h4>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              width: "100%",
-              marginBottom: "10px",
-            }}
-          >
+          <div className="two-inputs" style={{display: "flex",  alignItems: "center", justifyContent: "space-between", width: "100%",  marginBottom: "10px", }}>
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "flex-start",
                 gap: "5px",
-                width: "50%",
+                width: "95%",
               }}
             >
               <label>Workspace Name</label>
@@ -79,7 +71,7 @@ const WorkspaceSettings = ({ openCreateSpace }) => {
                 flexDirection: "column",
                 alignItems: "flex-start",
                 gap: "5px",
-                width: "50%",
+                width: "95%",
               }}
             >
               <label>Workspace URL</label>
@@ -235,7 +227,7 @@ const WorkspaceSettings = ({ openCreateSpace }) => {
           </div>
         </div>
         <div className="members-box">
-          <div
+          <div className="header"
             style={{
               display: "flex",
               alignItems: "center",
@@ -259,28 +251,29 @@ const WorkspaceSettings = ({ openCreateSpace }) => {
               Invite Member
             </button>
           </div>
-         <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
-  
-  {/* Table Header */}
-  <thead>
-    <tr style={{ backgroundColor: '#f8fafc' }}>
-      <th style={{ padding: '16px 24px', fontSize: '12px', fontWeight: '600', color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>USER</th>  
-      <th style={{ padding: '16px 24px', fontSize: '12px', fontWeight: '600', color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>ROLE</th>
-      <th style={{ padding: '16px 24px', fontSize: '12px', fontWeight: '600', color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>STATUS</th>
-      <th style={{ padding: '16px 24px' }}></th>
-    </tr>
-  </thead>
-  
-  {/* Table Body */}
-  <tbody>
-    {users.map((user, index) => (
-      <tr key={user.id} style={{ 
-        backgroundColor: '#ffffff',
-        borderBottom: index === users.length - 1 ? 'none' : '1px solid #f1f5f9' 
-      }}>
-        
-        {/* User Cell */}
-        <td style={{ padding: '16px 24px' }}>
+          <div style={{ width: '100%', overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left',minWidth:'600px' }}>
+
+          {/* Table Header */}
+          <thead>
+          <tr style={{ backgroundColor: '#f8fafc' }}>
+          <th style={{ padding: '16px 24px', fontSize: '12px', fontWeight: '600', color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>USER</th>  
+          <th style={{ padding: '16px 24px', fontSize: '12px', fontWeight: '600', color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>ROLE</th>
+          <th style={{ padding: '16px 24px', fontSize: '12px', fontWeight: '600', color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>STATUS</th>
+          <th style={{ padding: '16px 24px' }}></th>
+          </tr>
+          </thead>
+
+          {/* Table Body */}
+          <tbody>
+          {users.map((user, index) => (
+          <tr key={user.id} style={{ 
+          backgroundColor: '#ffffff',
+          borderBottom: index === users.length - 1 ? 'none' : '1px solid #f1f5f9' 
+          }}>
+
+          {/* User Cell */}
+          <td style={{ padding: '16px 24px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
             <img 
               src={user.avatar} 
@@ -292,10 +285,10 @@ const WorkspaceSettings = ({ openCreateSpace }) => {
               <span style={{ fontSize: '13px', color: '#64748b' }}>{user.email}</span>
             </div>
           </div>
-        </td>
-        
-        {/* Role Cell */}
-        <td style={{ padding: '16px 24px' }}>
+          </td>
+
+          {/* Role Cell */}
+          <td style={{ padding: '16px 24px' }}>
           <select 
             value={user.role} 
             onChange={(e) => handleRoleChange(user.id, e.target.value)}
@@ -318,10 +311,10 @@ const WorkspaceSettings = ({ openCreateSpace }) => {
             <option value="Admin">Admin</option>
             <option value="Member">Member</option>
           </select>
-        </td>
-        
-        {/* Status Cell */}
-        <td style={{ padding: '16px 24px' }}>
+          </td>
+
+          {/* Status Cell */}
+          <td style={{ padding: '16px 24px' }}>
           <span style={{ 
             backgroundColor: '#dcfce7', 
             color: '#15803d', 
@@ -332,10 +325,10 @@ const WorkspaceSettings = ({ openCreateSpace }) => {
           }}>
             {user.status}
           </span>
-        </td>
-        
-        {/* Actions Cell */}
-        <td style={{ padding: '16px 24px', textAlign: 'right' }}>
+          </td>
+
+          {/* Actions Cell */}
+          <td style={{ padding: '16px 24px', textAlign: 'right' }}>
           <button 
             onClick={() => handleDelete(user.id)}
             style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#94a3b8', padding: '4px' }}
@@ -343,23 +336,24 @@ const WorkspaceSettings = ({ openCreateSpace }) => {
           >
             <Trash2 size={18} strokeWidth={1.5} />
           </button>
-        </td>
+          </td>
 
-      </tr>
-    ))}
-  </tbody>
-         </table>
+          </tr>
+          ))}
+          </tbody>
+          </table>
+          </div>
         </div>
         <div className="notifications-box">
           <h4>Notifications</h4>
-          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',width:'100%',marginBottom:'15px',borderTop:'1px solid #e2e8f0',paddingTop:'5px'}}>
+          <div className="box" style={{display:'flex',alignItems:'center',justifyContent:'space-between',width:'100%',marginBottom:'15px',borderTop:'1px solid #e2e8f0',paddingTop:'5px'}}>
             <div style={{display:'flex',flexDirection:'column',alignItems:'flex-start'}}>
                 <span>Workspace Activity</span>
                 <span style={{color:'#64748b'}}>Notify everyone when new tasks or notes are created.</span>
             </div>
              <div onClick={() => {setActvBtn(prev => ({  ...prev,wsActivity: !prev.wsActivity }));}} className={actvBtn.wsActivity ? "toggle-switch active" :"toggle-switch"}></div>
           </div>
-          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',width:'100%',marginBottom:'15px',borderTop:'1px solid #e2e8f0',paddingTop:'5px'}}>
+          <div className="box" style={{display:'flex',alignItems:'center',justifyContent:'space-between',width:'100%',marginBottom:'15px',borderTop:'1px solid #e2e8f0',paddingTop:'5px'}}>
             <div style={{display:'flex',flexDirection:'column',alignItems:'flex-start'}}>
                 <span>Members Updates</span>
                 <span style={{color:'#64748b'}}>Alert admins when members join or leave the workspace.</span>
@@ -369,7 +363,7 @@ const WorkspaceSettings = ({ openCreateSpace }) => {
         </div>
         <div className="danger-zone">
           <h4 style={{ color: "#dc2626" }}>Danger Zone</h4>
-          <div
+          <div className="box"
             style={{
               width: "100%",
               display: "flex",

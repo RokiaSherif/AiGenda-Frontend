@@ -10,7 +10,7 @@ const WorkspaceTaskSpecific = ()=>{
     return(
         <div className="app-container">
             <SidebarofWorkspace/>
-          <div className="main-content" style={{marginLeft:'130px'}}>
+          <div className="main-content" >
               <div className="task-details-wrapper">
       {/* HEADER ROW */}
       <div className="task-top-header">

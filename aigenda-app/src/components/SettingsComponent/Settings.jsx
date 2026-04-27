@@ -17,7 +17,7 @@ const Settings = () =>{
     return (
         <div className="app-container">
             <Sidebar/>
-             <main className="main-content" style={{marginLeft:'120px'}}>
+             <main className="main-content">
       <Header/>
 
       <div className="settings-layout">

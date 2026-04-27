@@ -1,34 +1,35 @@
 /* styles of ws overview  */
-.app-container .main-container .top-sec{
+.app-container .main-content .top-sec{
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     margin-top: 0;
 }
-.app-container .main-container .boxes{
-    width: 100%;
-    display:flex;
-    align-items: center;
-    gap: 15px;
-    margin: 20px 0;
+.app-container .main-content .boxes{
+  width: 100%;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 20px 0;
 }
-.app-container .main-container .boxes .box{
-    flex: 1;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 10px;
-    padding: 0 20px;
-    height: 150px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, .2);
+.app-container .main-content .boxes .box{
+  flex: 1;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 20px;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, .2);
 }
 
-.app-container .main-container .boxes .box h1,
-.app-container .main-container .boxes .box p{
+.app-container .main-content .boxes .box h1,
+.app-container .main-content .boxes .box p{
     margin: 0;
 }
 /* --- LAYOUT WRAPPER --- */
@@ -138,7 +139,7 @@
   text-align: center;
   margin-top: auto; 
 }
-.app-container .main-container .priority-tasks{
+.app-container .main-content .priority-tasks{
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -148,15 +149,36 @@
     border: 1px solid #f9f9f9;
     padding: 10px 20px;
 }
-.app-container .main-container .priority-tasks .box{
+.app-container .main-content .priority-tasks .box{
     width: 100%;
     display: flex;
     align-items: center;
     margin-bottom: 10px;
     gap: 10px;
 }
-.app-container .main-container .priority-tasks .box input{
+.app-container .main-content .priority-tasks .box input{
     transform: scale(1.5);
+}
+@media (max-width: 1254px) {
+  .app-container .main-content .boxes{
+    flex-direction: column;
+    gap: 15px;
+  }
+  .app-container .main-content .boxes .box{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+  .app-container .main-content .widgets-grid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .app-container .main-content .widgets-grid .widget-card{
+    width: 100%;
+  }
 }
 /* styles for space overview */
 /* --- MAIN LAYOUT --- */
@@ -169,6 +191,43 @@
 @media (max-width: 1024px) {
   .tasks-notes-wrapper {
     grid-template-columns: 1fr; /* Stacks them on smaller screens so they don't squish */
+  }
+}
+@media (max-width: 1090px) {
+  .tasks-notes-wrapper table, 
+  .tasks-notes-wrapper thead, 
+  .tasks-notes-wrapper tbody, 
+  .tasks-notes-wrapper th, 
+  .tasks-notes-wrapper td, 
+  .tasks-notes-wrapper tr {
+    display: block;
+    padding-left: 15px;
+  }
+  .tasks-notes-wrapper thead {
+    display: none; 
+  }
+  .tasks-notes-wrapper tr {
+    margin-bottom: 15px;
+    border: 1px solid #f1f5f9;
+    border-radius: 12px;
+    padding: 10px;
+  }
+  .tasks-notes-wrapper td {
+    padding: 10px 5px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: none !important;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  .task-feature-cell{
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  .task-feature-cell #title {
+    font-size: 11px;
+    font-weight: 500;
   }
 }
 /* --- REUSABLE CONTAINERS --- */

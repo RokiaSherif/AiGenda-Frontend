@@ -146,7 +146,7 @@ const Signup = () =>{
                 <Tooltip title={errors.password ||''} placement="top-end" open={Boolean(openTooltips.password)} arrow>
                 <input  type={showPassword?'text':'password'} placeholder='Password' style={{position:"relative"}} value={inputValues.password} onChange={(e)=>{setInputValues({...inputValues, password:e.target.value}); setOpenTooltips(prev =>({...prev, password:false}))}}/>
                 </Tooltip>
-                <span onClick={()=>{setShowPassword(!showPassword)}}><i className="fa-solid fa-eye" style={{position:'absolute',top:'122px'}}></i></span>
+                <span className="signup-eye" onClick={()=>{setShowPassword(!showPassword)}}><i className="fa-solid fa-eye"></i></span>
                 <Tooltip title={errors.confirmPassword || ''} placement="top-end" open={Boolean(openTooltips.confirmPassword)} arrow>
                 <input  type="password" placeholder="Confirm Password" value={inputValues.confirmPassword} onChange={(e)=>{setInputValues({...inputValues, confirmPassword:e.target.value}); setOpenTooltips(prev =>({...prev, confirmPassword:false}))}}/>
                 </Tooltip>

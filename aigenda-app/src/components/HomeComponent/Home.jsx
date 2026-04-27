@@ -5,9 +5,8 @@ import "./home.css";
 const Home = () => {
   return (
     <div className="app-container">
-      <h1>home</h1>
       <Sidebar />
-      <main className="main-content" style={{marginLeft:'50px'}}>
+      <main className="main-content" >
         <Header />
         <div className="page-container">
           <MainContent />

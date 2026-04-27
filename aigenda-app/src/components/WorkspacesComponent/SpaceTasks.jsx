@@ -13,18 +13,20 @@ const SpaceTasks = ()=>{
     return(
         <div className="app-container">
         <SidebarofWorkspace/>
-        <main className="main-content" style={{marginLeft:"130px"}}>
+        <main className="main-content" >
        <HeaderOfWS/>
       <div className="page-container">
         <TopSection/>
-        <div style={{display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "2rem"}}>
+        <div className="button-box" style={{display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "2rem"}}>
           <div style={{display:"flex", gap: "1rem"}}>
-            <div className="search-bar" style={{width: "16rem"}}>
+            <div style={{display:'flex',alignItems:'center',gap:'10px',justifyContent:'center'}}>
+              <div className="search-bar" style={{width: "16rem"}}>
               <Search style={{position:'absolute',left:'10',top:'10',zIndex:'3'}} size={18}/>
               <input type="text" placeholder="Search..." className="search-input" style={{position:'relative',background: "white", border: "1px solid var(--border-color)"}}/>
             </div>
-            <button className="control-btn" style={{background: "white", border: "1px solid var(--border-color)", padding: "0.625rem",marginLeft:'80px'}}><Filter/></button>
-          </div>
+            <button className="control-btn" style={{width:'70px',background: "white", border: "1px solid var(--border-color)"}}><Filter/></button>
+            </div>
+            </div>
           <button onClick={()=>{setOpenCreateTask(true)}} style={{display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--primary)", color: "white", padding: "0.75rem 1.5rem", borderRadius: "0.75rem", border: "none", fontWeight: "600", cursor: "pointer", boxShadow: "var(--shadow-primary)"}}>
             <PlusCircle/>
             <span>Create Task</span>

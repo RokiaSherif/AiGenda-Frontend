@@ -2,7 +2,7 @@ import { ChevronLeft, ChevronRight, LayoutDashboard, MoreHorizontal } from "luci
 
 const MainContent = ()=>{
     return(
-        <>
+      <>
       {/* <!-- Page Specific Content (HomeView) --> */}
         <section className="welcome-section">
           <div className="welcome-text">

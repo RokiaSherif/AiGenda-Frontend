@@ -5,7 +5,7 @@ import Signup from './components/Authentication/Signup';
 import ForgotPassword from './components/Authentication/ForgotPassword';
 import Home from './components/HomeComponent/Home';
 import Chatbot from "./components/ChatbotComponent/Chatbot";
-import Analytics from './components/AnalyticsComponent/Analytics';
+import Dashboard from './components/Dashboard/Dashboard';
 import Community from './components/CommunityComponent/Community';
 import Connect from './components/ConnectComponent/Connect';
 import Profile from './components/ProfileComponent/Profile';
@@ -55,7 +55,7 @@ function App() {
         <Route path='/sessioncompleted' element={<SessionCompletion/>}/>
         <Route path='/sessionsetup' element={<Setup/>}/>
         {/*  */}
-        <Route path='/analytics' element={<Analytics/>}/>
+        <Route path='/dashboard' element={<Dashboard/>}/>
         <Route path='/community' element={<Community/>}/>
         <Route path='/connect' element={<Connect/>}/>
         <Route path='/chatbot' element={<Chatbot/>}/>

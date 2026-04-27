@@ -13,7 +13,7 @@ const Chatbot = ()=>{
     return(
         <div className="app-container">
         <Sidebar/>
-        <main className="main-content" style={{marginLeft:'130px'}}>
+        <main className="main-content">
         <header className="header">
         <div className="header-left">
           <button className="control-btn" style={{marginRight: "1rem"}}><i data-lucide="chevron-left"></i></button>

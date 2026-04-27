@@ -1,6 +1,7 @@
 import { Bell, Calendar, ChevronLeftIcon, ChevronRightIcon, Plus } from "lucide-react";
 import SidebarofWorkspace from "./SidebarofWorkspace";
 import './stylesofWS.css';
+import '../HomeComponent/home.css';
 import TasksImg from '../../assets/images/tasksimg.png';
 import FocustimeImg from '../../assets/images/focustimeimg.png';
 import SpacesImg from '../../assets/images/spacesimg.png';
@@ -33,14 +34,13 @@ const recentActivities = [
     color: '#e2e8f0'
   },
 ];
-
 const WorkspaceOverview = () => {
   return (
     <div className="app-container">
       <SidebarofWorkspace />
-      <div className="main-container" style={{marginLeft:'140px',marginTop:'0'}}>
-
-        <div className="top-sec">
+      <div className="main-content">
+        <div className="page-container">
+           <div className="top-sec">
             <div style={{display:'flex',alignItems:'center',justifyContent:'center',gap:'15px'}}>
                 <div style={{display:'flex',alignItems:'center',gap:'10px'}}>
                     <span><ChevronLeftIcon/></span>
@@ -151,7 +151,7 @@ const WorkspaceOverview = () => {
               <div style={{display:'flex',flexDirection:'column',alignItems:'flex-start'}}>
                 <p style={{marginBottom:'1px'}}>Refine mobile navigation architecture</p>
                 <div style={{display:'flex',alignItems:'center',gap:'10px',marginTop:'1px'}}>
-                  <div style={{backgroundColor:'#fff1f2',color:'red',width:'130px',height:'25px',fontSize:'14px',borderRadius:'8px'}}>HIGH PRIORITY</div>
+                  <div style={{backgroundColor:'#fff1f2',color:'red',width:'130px',height:'25px',fontSize:'14px',borderRadius:'8px',display:'flex',justifyContent:'center'}}>HIGH PRIORITY</div>
                   <div style={{color:'#b4bfcd',display:'flex',gap:'5px'}}><span><Calendar size={15}/></span><span>Today</span></div>
                 </div>
               </div>
@@ -162,12 +162,13 @@ const WorkspaceOverview = () => {
               <div style={{display:'flex',flexDirection:'column',alignItems:'flex-start'}}>
                 <p style={{marginBottom:'1px'}}>Draft stakeholder presentation</p>
                 <div style={{display:'flex',alignItems:'center',gap:'10px',marginTop:'1px'}}>
-                  <div style={{backgroundColor:'#eff6ff',color:'blue',width:'130px',height:'25px',fontSize:'14px',borderRadius:'8px'}}>PRODUCT DESIGN</div>
+                  <div style={{backgroundColor:'#eff6ff',color:'blue',width:'130px',height:'25px',fontSize:'14px',borderRadius:'8px',display:'flex',justifyContent:'center'}}>PRODUCT DESIGN</div>
                   <div style={{color:'#b4bfcd',display:'flex',gap:'5px'}}><span><Calendar size={15}/></span><span>Tomorrow</span></div>
                 </div>
               </div>
               
             </div>
+        </div>
         </div>
       </div>
     </div>

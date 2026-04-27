@@ -5,6 +5,7 @@ import TopSection from "./TopSection";
 import './workspace.css';
 import AvtImg from '../../assets/images/avatar1.jpg';
 import AvtImg2 from '../../assets/images/avatar2.jpg';
+import { Bell, Calendar, ChevronLeft, ChevronRight, Download, Search } from "lucide-react";
 // --- MOCK DATA ---
 const teamData = [
   { id: 1, name: 'Alex R.', tasks: 48, maxTasks: 60, color: '#8b5cf6', avatar: AvtImg },
@@ -28,14 +29,42 @@ const SpaceAnalytics = ()=>{
     return(
         <div className="app-container">
             <SidebarofWorkspace/>
-             <main className="main-content" style={{marginLeft:'130px'}}>
-             <Header/>   
+             <main className="main-content">
+              <header className="header">
+              <div className="header-left">
+              <div className="nav-controls">
+              <button className="control-btn">
+              <ChevronLeft/></button>
+              <button className="control-btn">
+              <ChevronRight/>
+              </button>
+              </div>
+              <div className="search-bar">
+              <Search style={{position:'absolute',left:'8px',top:'8px',zIndex:'3'}} size={20}/>
+              <input
+              type="text"
+              placeholder="Search analytics or reports..."
+              className="search-input" style={{position:'relative'}}
+              />
+              </div>
+              </div>
+              <div className="header-right">
+              <div className="buttons">
+              <div style={{display: "flex", alignItems: "center", gap: "0.5rem", background: "white", padding: "0.5rem 1rem", borderRadius: "0.75rem", boxShadow: "var(--shadow-sm)", fontSize: "0.875rem", color: "var(--text-muted)", fontWeight: "500"}}>
+              <Calendar style={{width: "1rem", height: "1rem"}}/>
+              <span>Last 30 Days</span>
+              </div>
+              <button style={{display: "flex", alignItems: "center", gap: "0.5rem", background: "var(--primary)", color: "white", padding: "0.5rem 1rem", borderRadius: "0.75rem", border: "none", fontSize: "0.875rem", fontWeight: "500", cursor: "pointer", boxShadow: "var(--shadow-primary)"}}>
+              <Download style={{width: "1rem", height: "1rem"}} />
+              <span>Export Report</span>
+              </button>
+              </div>
+              </div>
+              </header>
+             {/* <Header/>    */}
              <div className="page-container">
-                <TopSection/>
-
-
-            <div className="dashboard-container">
-                
+              <TopSection/>
+            <div className="dashboard-container">          
                 {/* 1. TASK COMPLETION TREND (Top Left) */}
                 <Card className="trend-card">
                     <div className="card-header">
@@ -131,12 +160,9 @@ const SpaceAnalytics = ()=>{
                         </div>
                     ))}
                     </div>
-                </Card>
-                
+                </Card> 
                 </div>
-
-
-             </div>
+            </div>
             </main>
         </div>
     )

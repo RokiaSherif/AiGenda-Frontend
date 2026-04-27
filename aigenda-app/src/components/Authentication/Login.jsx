@@ -131,14 +131,14 @@ const Login = () => {
                 }}
               />
             </Tooltip>
-            <span
+            <span className="login-eye"
               onClick={() => {
                 setShowPassword(!showPassword);
               }}
             >
               <i className="fa-solid fa-eye"></i>
-            </span>
-            <div className="checkbox">
+            </span>    
+            {/* <div className="checkbox">
               <input
                 id="rememberme"
                 type="checkbox"
@@ -148,7 +148,7 @@ const Login = () => {
                 }}
               />
               <label htmlFor="rememberme">Remember me</label>
-            </div>
+            </div>  */}
             <button type="submit" disabled={isLoading}>{isLoading ? 'loading':'Login'}</button>
             <Link to={"/forgotpassword"}>
               <p>Forgot password?</p>

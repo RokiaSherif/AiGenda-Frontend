@@ -7,7 +7,7 @@ const Connect = ()=>{
     return(
     <div className='app-container'>
         <Sidebar/>
-        <main className="main-content" style={{marginLeft:'130px'}}>
+        <main className="main-content">
       <Header/>
 
       <div className="page-container">

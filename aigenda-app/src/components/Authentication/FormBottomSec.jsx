@@ -44,9 +44,6 @@ const FormBottomSec = ({show, title, theLink, theLinkTitle})=>{
                   width="300"
                   logo_alignment="center"
                 />
-               {/* <div onClick={()=>{}}><img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google logo" /></div> */}
-               {/* <div><img src="https://www.svgrepo.com/show/475647/facebook-color.svg" alt="Facebook" style={{borderRadius:'10px'}}/></div> */}
-                {/* <div><img src="https://www.svgrepo.com/show/512317/github-142.svg" alt="GitHub logo" /></div> */}
             </div>
             </>
             }

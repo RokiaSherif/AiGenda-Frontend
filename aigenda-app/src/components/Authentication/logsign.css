@@ -58,24 +58,49 @@
 .logsigncontainer .logsignformbox form #id{
     position: relative;
 }
-.logsigncontainer .logsignformbox form span{
+.logsigncontainer .logsignformbox form .login-eye{
     position: absolute;
     color: #7b61ff;
-    left: 363px;
+    left: 80%;
     top: 193px;
     cursor: pointer;
 }
-.logsigncontainer .logsignformbox form .checkbox{
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-right:330px;
+.logsigncontainer .logsignformbox form .signup-eye{
+  position: absolute;
+  right: 48px;
+  top: 45.5%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #7b61ff;
 }
-.logsigncontainer .logsignformbox form .checkbox label{
-    margin-left: -120px ;
+@media (min-width: 530px) and (max-width: 1030px) {
+  .logsigncontainer .logsignformbox form .login-eye {
+    right: 60px;
+  }
+  .logsigncontainer .logsignformbox form .signup-eye{
+    right: 62px;
+    top: 47%;
+  }
 }
+@media (min-width: 1024px) {
+  .logsigncontainer .logsignformbox form .login-eye {
+    right: 60px;
+  }
+  .logsigncontainer .logsignformbox form .signup-eye{
+     right: 62px;
+     top: 47%;
+  }
+}
+/* .logsigncontainer .logsignformbox form .checkbox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+}
+.logsigncontainer .logsignformbox form .checkbox *{
+    flex: 1;
+} */
 .logsigncontainer .logsignformbox form button{
     display: block;
     width: 100%;
@@ -93,29 +118,28 @@
 .logsigncontainer .logsignformbox form p{
     cursor: pointer;
     margin-top: 5px;
+    margin-bottom:0;
 }
 .logsigncontainer .logsignformbox #line{
     color: #4c4c4c;
-    position: relative;
     align-self: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 30px;
-    margin-bottom: 10px;
+    margin: 30px 0 10px 0;
+    width: 100%;
 }
 .logsigncontainer .logsignformbox #line::before,
 .logsigncontainer .logsignformbox #line::after{
     content: "";
-    position: absolute;
-    left: -160px;
-    top: 10px;
-    background-color: #4c4c4c;
-    width: 150px;
-    height: 2px;
+    flex: 1;
+   border-bottom: 2px solid #4c4c4c;
 }
-.logsigncontainer .logsignformbox #line::after{
-left: 30px;
+.logsigncontainer .logsignformbox #line:not(:empty)::before{
+    margin-right:15px;
+}
+.logsigncontainer .logsignformbox #line:not(:empty)::after{
+    margin-left:15px;
 }
 .logsigncontainer .logsignformbox .icons{
     display: flex;
