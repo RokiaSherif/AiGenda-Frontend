@@ -1,131 +1,191 @@
-import { Search, UserPlus, Filter, MoreHorizontal, Globe, Star, Zap, MessageSquare } from 'lucide-react';
-import Header from '../HomeComponent/Header';
-import '../HomeComponent/home.css';
-import Sidebar from '../HomeComponent/Sidebar';
-import './community.css';
-const Community = ()=>{
-    return(
-        <div className="app-container">
-            <Sidebar/>
-              <main className="main-content">
-            <Header/>
-
-      <div className="page-container">
-        <div style={{  display: 'flex',  justifyContent: 'space-between',  alignItems: 'center', marginBottom: '3rem' }}>
-          <div>
-            <h2 style={{fontSize: "2.25rem", fontWeight: "700", marginBottom: "0.5rem"}}>Community & Teams</h2>
-            <p style={{color:" var(--text-muted)", fontSize: "1.125rem"}}>Collaborate with your team and join the global community</p>
+import { AppWindow, AppWindowIcon, ArrowRight, Banknote, BoxesIcon, Calendar1, CalendarDays, File, Image, LayoutDashboard, List, Map, Megaphone, MessageCircleCode, MessageCircleQuestionIcon, Microscope, PaletteIcon, Plus, PlusIcon, SaveAll, Settings, TerminalSquare, TriangleAlert, Users } from "lucide-react";
+import "../HomeComponent/home.css";
+import Sidebar from "../HomeComponent/Sidebar";
+import "./community.css";
+import { useNavigate } from "react-router-dom";
+const Community = () => {
+  const navigate = useNavigate();
+  const workspacesData = [
+  {
+    id: 1,
+    title: "Design System Group",
+    status: "ACTIVE",
+    icon: <PaletteIcon/>,
+    members: 12,
+    tag: "Shared Assets",
+    recentItems: [
+      {
+        id: "a1",
+        title: "Brand Guidelines 2024",
+        type: <SaveAll size={20}/>, 
+      },
+      {
+        id: "a2",
+        title: "Icon Library v2.0",
+        type: <File size={20}/>,
+      },
+      {
+        id: "a3",
+        title: "Component Roadmap",
+        type: <LayoutDashboard size={20}/>,
+      }
+    ],
+  },
+  {
+    id: 2,
+    title: "Marketing Ops",
+    status: "UPDATED 2H AGO",
+    icon: <Megaphone/>,
+    members: 5,
+    tag: "Campaign Planning",
+    recentItems: [
+      {
+        id: "a4",
+        title: "Social Media Calender",
+        type: <CalendarDays size={20}/>, 
+      },
+      {
+        id: "a5",
+        title: "Q4 Campaign Assets",
+        type: <Image size={20}/>,
+      },
+      {
+        id: "a6",
+        title: "Influencer Brief",
+        type: <File size={20}/>,
+      }
+    ],
+  },
+  {
+    id: 3,
+    title: "Engineering Alpha",
+    status: "8 NEW DOCS",
+    icon: <BoxesIcon/>,
+    members: 8,
+    tag: "Dev Environment",
+    recentItems: [
+      {
+        id: "a7",
+        title: "Sprint Backlog Q4",
+        type: <List size={20}/>, 
+      },
+      {
+        id: "a8",
+        title: "API Documentation",
+        type: <AppWindow size={20}/>,
+      },
+      {
+        id: "a9",
+        title: "Security Protocal",
+        type: <TriangleAlert size={20}/>,
+      }
+    ],
+  },
+  {
+    id: 4,
+    title: "Sales & Growth",
+    status: "UPDATED 6H AGO",
+    icon: <Banknote/>,
+    members: 15,
+    tag: "High Priority",
+    recentItems: [
+      {
+        id: "a10",
+        title: "Q3 Revenue Report",
+        type: <TerminalSquare  size={20}/>, 
+      },
+      {
+        id: "a11",
+        title: "Target Customer Profiles",
+        type: <Users size={20}/>,
+      },
+      {
+        id: "a12",
+        title: "Pitch Deck Final",
+        type: <File size={20}/>,
+      }
+    ],
+  },
+  {
+    id: 5,
+    title: "Product Strategy",
+    status: "3 NEW DOCS",
+    icon: <Settings/>,
+    members: 3,
+    tag: "Executive",
+    recentItems: [
+      {
+        id: "a13",
+        title: "2025 Vision Roadmap",
+        type: <Map size={20}/>, 
+      },
+      {
+        id: "a14",
+        title: "User Interview Insights",
+        type: <MessageCircleQuestionIcon size={20}/>,
+      },
+      {
+        id: "a15",
+        title: "Market Research Pack",
+        type: <Microscope size={20}/>,
+      }
+    ],
+  },
+];
+  return (
+    <div className="app-container">
+      <Sidebar />
+      <main className="main-content">
+        <div className="page-container">
+          <div className="main-community-header">
+            <div>
+              <h2>Your Teams</h2>
+              <p style={{color:'var(--light-purple)'}}>You are currently active in 6 workspaces</p>
+            </div>
+            <button>
+              <span style={{marginTop:'2px'}}><PlusIcon size={17}/></span>
+              Create Team
+            </button>
           </div>
-          <button style={{display: "flex", alignItems: "center", gap: "0.75rem", background: "var(--primary)", color: "white", padding: "1rem 2rem", borderRadius: "1.25rem", border: "none", fontWeight: "700", cursor: "pointer", boxShadow: "var(--shadow-primary)"}}>
-            <UserPlus/>
-            <span>Create Team</span>
-          </button>
-        </div>
+          <div className="community-boxes">
+                {workspacesData.map((group) => (
+                <div key={group.id} className="card">
+                <div className="card-header">
+                <div className="icon-bg">{group.icon}</div>
+                <div className={group.status === "ACTIVE"?"status-tag-active":"status-tag"}>{group.status}</div>
+                </div>
+                <div className="text">
+                <h3>{group.title}</h3>
+                <div className="sub-info">
+                  <p><Users size={15}/> {group.members} members</p>
+                  <p>•  {group.tag}</p></div>
+                </div>
 
-        <div className="community-layout">
-          <div style={{display: "flex", flexDirection: "column", gap: "2rem"}}>
-            <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
-              <h3 style={{fontSize: "1.5rem", fontWeight: "700"}}>Active Teams</h3>
-              <div style={{display: "flex", gap: "1rem"}}>
-                <button className="control-btn" style={{background: "white", border: "1px solid var(--border-color)", padding:" 0.75rem"}}><Search/></button>
-                <button className="control-btn" style={{background: "white", border: "1px solid var(--border-color)", padding:" 0.75rem"}}><Filter/></button>
-              </div>
-            </div>
+                <div className="recent-section">
+                <h5 style={{color:"var(--light-purple)"}}>RECENT SHARED ITEMS</h5>
+                {group.recentItems.map((item) => (
+                <div key={item.id} className="item-row">
+                  <span style={{color:'var(--light-purple)'}}>{item.type}</span>
+                  <span style={{fontWeight:'500'}}>{item.title}</span>
+                </div>
+                ))}
+                </div>
 
-            <div style={{display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem"}}>
-              <div className="team-card">
-                <div style={{display: "flex", justifyContent: "space-between", alignItems: "flex-start"}}>
-                  <img src="https://picsum.photos/seed/ds/80/80" className="team-avatar"/>
-                  <button className="control-btn"><MoreHorizontal/></button>
+                <div className="card-footer" onClick={()=>{navigate('/sharedspaces')}}>
+                <span style={{fontWeight:'500',color:'var(--purple-color)'}}>View workspace</span>
+                <span style={{color:'var(--light-purple)',marginTop:'10px'}}><ArrowRight size={20} /></span>
                 </div>
-                <div style={{marginBottom: "2rem"}}>
-                  <div className="team-title">Design System <div className="team-status"></div></div>
-                  <p className="team-category">Design</p>
                 </div>
-                <div style={{display: "flex", justifyContent: "space-between", alignItems: "center", paddingTop: "1.5rem", borderTop: "1px solid var(--border-color)"}}>
-                  <div className="task-avatars">
-                    <img src="https://picsum.photos/seed/m1/40/40"/>
-                    <img src="https://picsum.photos/seed/m2/40/40"/>
-                    <img src="https://picsum.photos/seed/m3/40/40"/>
-                    <div style={{width: "2.5rem", height: "2.5rem", borderRadius: "9999px", background: "#F1F5F9", border:" 4px solid white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.625rem", fontWeight: "700", color: "var(--text-soft)", marginLeft: "-0.75rem"}}>+8</div>
-                  </div>
-                  <button style={{padding: "0.625rem 1.5rem", background: "var(--primary-soft)", color: "var(--primary)", border: "none", borderRadius: "0.75rem", fontWeight: "700", cursor: "pointer"}}>Join</button>
-                </div>
+                ))}
+              <div className="create-box">
+                <div className="circle"> <Plus/></div>
+                <h4>Create New Team</h4>
+                <p style={{color:'var(--light-purple)',width:'200px',marginTop:'0'}}>Organize your projects and collaborate with teammates.</p>
               </div>
-
-              <div className="team-card">
-                <div style={{display: "flex", justifyContent: "space-between", alignItems: "flexStart"}}>
-                  <img src="https://picsum.photos/seed/fe/80/80" className="team-avatar"/>
-                  <button className="control-btn"><MoreHorizontal/></button>
-                </div>
-                <div style={{marginBottom: "2rem"}}>
-                  <div className="team-title">Frontend Guild <div className="team-status"></div></div>
-                  <p className="team-category">Engineering</p>
-                </div>
-                <div style={{display: "flex", justifyContent: "space-between", alignItems: "center", paddingTop: "1.5rem", borderTop: "1px solid var(--border-color)"}}>
-                  <div className="task-avatars">
-                    <img src="https://picsum.photos/seed/m4/40/40"/>
-                    <img src="https://picsum.photos/seed/m5/40/40"/>
-                    <div style={{width: "2.5rem", height: "2.5rem", borderRadius: "9999px", background: "#F1F5F9", border: "4px solid white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.625rem", fontWeight: "700", color: "var(--text-soft)", marginLeft: "-0.75rem"}}>+41</div>
-                  </div>
-                  <button style={{padding: "0.625rem 1.5rem", background: "var(--primary-soft)", color: "var(--primary)", border: "none", borderRadius: "0.75rem", fontWeight: "700", cursor: "pointer"}}>Join</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div style={{display: "flex", flexDirection: "column", gap: "3rem"}}>
-            <div className="member-list">
-              <h3 style={{fontSize: "1.25rem", fontWeight: "700", marginBottom: "2rem"}}>Active Members</h3>
-              <div className="member-item">
-                <div className="member-info">
-                  <div className="member-avatar">
-                    <img src="https://picsum.photos/seed/alex/60/60"/>
-                    <div className="member-status status-online"></div>
-                  </div>
-                  <div>
-                    <h4 style={{fontWeight: "700"}}>Alex Rivera</h4>
-                    <p style={{fontSize: "0.75rem", color: "var(--text-muted)"}}>Lead Designer</p>
-                  </div>
-                </div>
-                <button className="control-btn"><MessageSquare/></button>
-              </div>
-              <div className="member-item">
-                <div className="member-info">
-                  <div className="member-avatar">
-                    <img src="https://picsum.photos/seed/sarah/60/60"/>
-                    <div className="member-status status-busy"></div>
-                  </div>
-                  <div>
-                    <h4 style={{fontWeight: "700"}}>Sarah Chen</h4>
-                    <p style={{fontSize: "0.75rem", color: "var(--text-muted)"}}>Senior Developer</p>
-                  </div>
-                </div>
-                <button className="control-btn"><MessageSquare/></button>
-              </div>
-              <button style={{width: "100%",padding: "1rem",background:" var(--bg-main)",border: "none",borderRadius: "1rem",color:" var(--text-muted)",fontWeight: "700",fontSize: "0.875rem",cursor: "pointer",marginTop: "1rem"}}>View all members</button>
-            </div>
-
-            <div className="global-card">
-              <h3 style={{fontSize: "1.25rem",fontWeight: "700",marginBottom: "2rem"}}>Global Community</h3>
-              <div className="global-stat">
-                <div className="stat-icon" style={{color: "var(--primary)"}}><Globe/></div>
-                <div><p className="stat-val">128k</p><p className="stat-label">Active Users</p></div>
-              </div>
-              <div className="global-stat">
-                <div className="stat-icon" style={{color: "#F59E0B"}}><Star/></div>
-                <div><p className="stat-val">4.9/5</p><p className="stat-label">User Rating</p></div>
-              </div>
-              <div className="global-stat">
-                <div className="stat-icon" style={{color: "#10B981"}}><Zap/></div>
-                <div><p className="stat-val">1.2M</p><p className="stat-label">Tasks Completed</p></div>
-              </div>
-            </div>
           </div>
         </div>
-      </div>
-    </main>
-        </div>
-    )
-}
+      </main>
+    </div>
+  );
+};
 export default Community;

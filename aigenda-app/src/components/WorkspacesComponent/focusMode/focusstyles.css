@@ -153,6 +153,7 @@
     justify-content: center;
     gap: 5px;
 }
+
 /* in focus mode styles */
 .in-focus-mode-container{
     width: 100%;
@@ -175,6 +176,14 @@
     padding: 20px;
     box-shadow: 3px 4px 10px rgba(0,0,0,0.1);
     margin-bottom: 10px;
+}
+@media (max-width: 700px) {
+    .in-focus-mode-container .content-box{
+        width: 80%;
+    }
+    .music{
+        display: none;
+    }
 }
 .in-focus-mode-container .content-box .subtasks{
     width: 100%;
@@ -239,6 +248,19 @@
     font-size: 15px;
 }
 /* pause focus styles */
+.overlay .focus-setup-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 400px;
+}
+@media (max-width: 500px) {
+    .overlay .focus-setup-container{
+        width: 80%;
+    }
+}
 .overlay .create-container .session-progress{
     width: 100%;
     display: flex;
@@ -274,9 +296,8 @@
 }
 .session-completed-container .boxes{
     width: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
     margin: 20px auto;
 }
@@ -364,4 +385,13 @@
     font-weight: 500;
     cursor: pointer;
     color: #475569;
+}
+@media (max-width: 720px) {
+    .session-completed-container p{
+        font-size: smaller;
+    }
+    .session-completed-container .recommendations{
+        height: 300px;
+        width: 100%;
+    }
 }

@@ -794,6 +794,10 @@
   gap: 30px;
 }
 @media (min-width: 600px) {
+  .create-outer-container {
+    margin: 0 15px;
+    width: 90%;
+  }
   .create-outer-container .form-sec .workspace-sec {
     flex-direction: row; 
     align-items: flex-start;

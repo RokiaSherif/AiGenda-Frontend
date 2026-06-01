@@ -206,16 +206,17 @@
 /* styling for create new space */
 .overlay .create-container {
   background-color: #fff;
+  padding: 30px; 
+  border-radius: 25px;
   border: 2px solid whitesmoke;
-  box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.3);
-  width: 600px;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 20px;
-  border-radius: 20px;
+  width: 100%;
+  max-width: 550px;
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: 4px 4px 7px rgba(0,0,0, 0.3);
+  margin: 15px;
+  text-align: start;
 }
 .overlay .create-container .form-box {
   display: flex;
@@ -346,10 +347,6 @@
   }
 }
 /* styling for create new task */
-.overlay .taskPage {
-  width: 600px;
-  padding: 20px;
-}
 .overlay .taskPage .form-box,
 .overlay .taskPage .form-box form {
   width: 100%;
@@ -360,6 +357,11 @@
 .overlay .taskPage .form-box .text input,
 .overlay .taskPage .form-box .text textarea {
   width: 100%;
+}
+.overlay .taskPage .form-box .text textarea {
+  resize: none;
+  overflow: hidden;
+  min-height: 100px;
 }
 .overlay .taskPage .form-box .selected-info {
   width: 100%;
@@ -416,6 +418,41 @@
   outline: none;
   height: 40px;
 }
+@media (max-width: 700px) {
+  .overlay .taskPage {
+    padding: 20px !important;
+    margin: 10px;
+  }
+  .overlay .taskPage .form-box .selected-info {
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+  .overlay .taskPage .form-box .selected-info > div.big-box {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 15px !important;
+  }
+  .overlay .taskPage .form-box .selected-info .box {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+  .overlay .taskPage .form-box .selected-info select,
+  .overlay .taskPage .form-box .selected-info input,
+  .overlay .taskPage .form-box .selected-info .box div[style] {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .overlay .taskPage .buttons {
+    flex-direction: column-reverse !important;
+    gap: 10px;
+  }
+  .overlay .taskPage .buttons button {
+    width: 100% !important;
+    height: 45px;
+  }
+}
+
 /* styling for create new note */
 .overlay .create-container .form {
   width: 100%;
@@ -639,47 +676,47 @@
   .app-container .main-container .general-box button {
     width: 100% !important;
   }
-  .app-container .main-container .spaces-box .box{
+  .app-container .main-container .spaces-box .box {
     flex-direction: column;
     gap: 10px;
   }
-  .app-container .main-container .spaces-box .box .buttons{
+  .app-container .main-container .spaces-box .box .buttons {
     justify-content: space-between;
   }
-  .app-container .main-container .notifications-box .box{
+  .app-container .main-container .notifications-box .box {
     flex-direction: column;
     gap: 10px;
     align-items: flex-start !important;
   }
-  .app-container .main-container .danger-zone .box{
+  .app-container .main-container .danger-zone .box {
     flex-direction: column;
     width: 100%;
     gap: 10px;
   }
-  .app-container .main-container .danger-zone .box button{
+  .app-container .main-container .danger-zone .box button {
     width: 100% !important;
   }
 }
 @media (max-width: 1090px) {
-  .app-container .main-container .members-box .header{
+  .app-container .main-container .members-box .header {
     flex-direction: column;
     gap: 10px;
     align-items: flex-start !important;
   }
-   .app-container .main-container .members-box .header button{
+  .app-container .main-container .members-box .header button {
     width: 100% !important;
-   }
-  .members-box table, 
-  .members-box thead, 
-  .members-box tbody, 
-  .members-box th, 
-  .members-box td, 
+  }
+  .members-box table,
+  .members-box thead,
+  .members-box tbody,
+  .members-box th,
+  .members-box td,
   .members-box tr {
     display: block;
     padding-left: 15px;
   }
   .members-box thead {
-    display: none; 
+    display: none;
   }
   .members-box tr {
     margin-bottom: 15px;

@@ -14,7 +14,7 @@ const CompletedTasksDetails = ({setOpenCTD})=>{
     {taskId:'6',taskName:'App inspiration.png',completionDate:'Jan 4, 2024',dueDate:'Jan 6, 2024',spaceName:'Space 3',icon:<Image size={20}/>},
    ]     
     return(
-        <div className="overlay" onClick={()=>{setOpenCTD(false)}} style={{alignItems:'flex-start',justifyContent:'flex-start'}}>
+        <div className="overlay dashboard-overlay" onClick={()=>{setOpenCTD(false)}} style={{alignItems:'flex-start',justifyContent:'flex-start'}}>
             <div className="completed-tasks-container" onClick={(e)=>e.stopPropagation()}>
             <div className="card gauge-card card-border-purple" style={{width:'300px'}}>
             <div className="gauge-header">

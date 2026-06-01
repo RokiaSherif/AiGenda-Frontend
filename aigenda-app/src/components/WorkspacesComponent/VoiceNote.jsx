@@ -6,7 +6,8 @@ const VoiceNote = ({openNoteType, setOpenNoteType})=>{
         <div className="overlay">
             <div className="create-container" style={{width:'376px'}}>
             <h3 style={{color:'#6918cf',marginTop:'0'}}>Record New Note</h3>
-            <div style={{width:'109px',height:'109px',borderRadius:'50%',backgroundColor:'#6918cf',color:'white',display:'flex',alignSelf:'center',alignItems:'center',justifyContent:'center'}}>
+            <div style={{display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',margin:'10px'}}>
+            <div style={{width:'109px',height:'109px',borderRadius:'50%',backgroundColor:'#6918cf',color:'white',display:'flex',alignItems:'center',justifyContent:'center'}}>
             <MicIcon size={50}/>
             </div>
             <div style={{marginTop:'30px',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',width:'100%',alignSelf:'flex-end'}}>
@@ -28,6 +29,8 @@ const VoiceNote = ({openNoteType, setOpenNoteType})=>{
             </div>
             </div>
             </div>
+            </div>
+           
             </div>
         </div>
     )

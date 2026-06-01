@@ -51,7 +51,7 @@ const toggelTask = (taskId) =>{
                 <button style={{backgroundColor:'white',color:'#566375',border:'1px solid #aaaa'}}><span><XIcon size={18}/></span> Exit Focus</button>
                 </Link>
             </div>
-            <div style={{position:'absolute',right:'100px',bottom:'10px',color:'#566375',cursor:'pointer'}}><span><Music2Icon size={30}/></span></div>
+            <div className="music" style={{position:'absolute',right:'100px',bottom:'10px',color:'#566375',cursor:'pointer'}}><span><Music2Icon size={30}/></span></div>
             {openPauseFocus && <PauseFocus setOpenPauseFocus={setOpenPauseFocus}/>}
         </div>
     )

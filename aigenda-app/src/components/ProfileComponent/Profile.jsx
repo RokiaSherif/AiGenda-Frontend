@@ -1,13 +1,23 @@
+import { Bell, Trash2 } from 'lucide-react';
 import Header from '../HomeComponent/Header';
 import '../HomeComponent/home.css';
 import Sidebar from '../HomeComponent/Sidebar';
 import './profile.css';
+import { useNavigate } from 'react-router-dom';
 const Profile = () =>{
+  const navigate = useNavigate();
     return (
         <div className="app-container">
             <Sidebar/>
               <main className="main-content">
-      <Header/>
+              <header className="header" style={{display:'flex',alignItems:'flex-start',justifyContent:'flex-end'}}>
+              <div className="header-right">
+              <button className="notification-btn" onClick={()=>navigate('/notificationcenter')}>
+              <Bell/>
+              <span className="notification-dot"></span>
+              </button>
+              </div>
+              </header>
       <div className="page-container">
         <div className="profile-layout">
           <div className="profile-card">
@@ -16,7 +26,7 @@ const Profile = () =>{
             <p className="profile-email">eman.tweeg@example.com</p>
             <div style={{display: "flex", gap: "1rem", width: "100%"}}>
               <button style={{flex: "1", padding: "0.75rem", background: "var(--primary-soft)", color: "var(--primary)", border:" none", borderRadius: "1rem", fontWeight:" 700", cursor: "pointer"}}>Change Photo</button>
-              <button style={{padding: "0.75rem", background:" var(--bg-main)", color: "#EF4444", border: "none", borderRadius:" 1rem", cursor: "pointer"}}><i data-lucide="trash-2"></i></button>
+              <button style={{padding: "0.75rem", background:" var(--bg-main)", color: "#EF4444", border: "none", borderRadius:" 1rem", cursor: "pointer"}}><Trash2/></button>
             </div>
           </div>
 

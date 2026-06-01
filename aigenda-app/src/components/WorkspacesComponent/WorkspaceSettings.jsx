@@ -251,8 +251,8 @@ const WorkspaceSettings = ({ openCreateSpace }) => {
               Invite Member
             </button>
           </div>
-          <div style={{ width: '100%', overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left',minWidth:'600px' }}>
+          <div style={{ width: '100%', WebkitOverflowScrolling: 'touch' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left',minWidth:'600px'}}>
 
           {/* Table Header */}
           <thead>

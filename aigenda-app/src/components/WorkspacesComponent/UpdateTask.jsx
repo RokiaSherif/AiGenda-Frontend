@@ -14,7 +14,7 @@ const UpdateTask = ({UpdateTask, setUpdateTask})=>{
                             <textarea defaultValue={'this is an example in update system please try to focus .this is an example in update system please try to focus. '}/>
                         </div>
                         <div className="selected-info">
-                            <div>
+                            <div className='big-box'>
                                 <div className="box">
                                     <label>Status</label>
                                     <select>
@@ -28,10 +28,10 @@ const UpdateTask = ({UpdateTask, setUpdateTask})=>{
                                     <input type='date' placeholder='12/09/2033'/>
                                 </div>
                             </div>
-                            <div>
+                            <div className='big-box'>
                                 <div className='box'>
                                     <label>Priority</label>
-                                    <div style={{width:'200px',height:'40px',padding:'20px',borderRadius:'15px',backgroundColor:'#eff0f2',display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+                                    <div style={{width:'100%',maxWidth:'200px',height:'40px',padding:'20px',borderRadius:'15px',backgroundColor:'#eff0f2',display:'flex',alignItems:'center',justifyContent:'space-between'}}>
                                         <span>High</span>
                                         <span>Medium</span>
                                         <span>Low</span>

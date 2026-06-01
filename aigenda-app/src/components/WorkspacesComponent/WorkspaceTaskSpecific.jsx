@@ -176,9 +176,8 @@ const WorkspaceTaskSpecific = ()=>{
           </div>
 
         </div>
-
       </div>
-    </div>
+              </div>
           </div>
           {updateTask && <UpdateTask updateTask={updateTask} setUpdateTask={setUpdateTask}/>}
           {deleteTask && <DeleteTask deleteTask={deleteTask} setDeleteTask={setDeleteTask}/>}

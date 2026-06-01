@@ -1,8 +1,12 @@
 /* Chatbot Specific Styles */
 .chatbot-container {
   display: flex;
-  height: calc(100vh - var(--header-height));
+  height: 100vh;
   background: #f8fafc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 .chat-sidebar {
   width: 320px;
@@ -11,6 +15,14 @@
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
+}
+.chatbot-container .chat-sidebar .sidebar-header{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 10px;
+  gap: 10px;
 }
 .chat-main {
   flex: 1;
@@ -29,9 +41,10 @@
 .chat-input-area {
   padding: 2rem;
   background: transparent;
+  width: 100%;
 }
 .chat-input-wrapper {
-  max-width: 56rem;
+  width: 100%;
   margin: 0 auto;
   background: white;
   border: 1px solid var(--border-color);

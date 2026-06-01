@@ -1,8 +1,8 @@
-import { Bell, MessageSquare, Mic, Plus, Rocket, RotateCcw, Send, ThumbsDown, ThumbsUp, Image } from "lucide-react";
-import Sidebar from "../HomeComponent/Sidebar";
+import { Bell, MessageSquare, Mic, Plus, Rocket, RotateCcw, Send, ThumbsDown, ThumbsUp, Image, ArrowLeft } from "lucide-react";
 import './chat.css';
 import '../HomeComponent/home.css';
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 const Chatbot = ()=>{
     useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -10,25 +10,19 @@ const Chatbot = ()=>{
       document.body.style.overflow = 'unset';
     };
   }, []);
+  const navigate = useNavigate();
     return(
         <div className="app-container">
-        <Sidebar/>
         <main className="main-content">
-        <header className="header">
-        <div className="header-left">
-          <button className="control-btn" style={{marginRight: "1rem"}}><i data-lucide="chevron-left"></i></button>
-          <button style={{display:"flex" ,alignItems: "center", gap: "0.5rem", padding: "0.75rem 1.5rem", border: "1px solid rgba(124, 58, 237, 0.2)", background: "transparent", color: "var(--primary)" , borderRadius: "1rem", fontWeight: "700" , cursor: "pointer"}}>
-            <Plus/>
-            <span>New Chat</span>
-          </button>
-        </div>
-        <div className="header-right">
-          <button className="notification-btn"><Bell/><span className="notification-dot"></span></button>
-        </div>
-      </header>
-
       <div className="chatbot-container">
         <aside className="chat-sidebar">
+          <div className="sidebar-header">
+            <div onClick={()=>{navigate(-1)}} style={{cursor:'pointer',backgroundColor:'#e0e3ef',width:'40px',height:'40px',borderRadius:'50%',display:'flex',alignItems:'center',justifyContent:'center',color:'#2610b2'}}><ArrowLeft/></div>
+            <button style={{width:'200px',display:"flex",alignItems: "center", gap: "5px", padding: "5px 10px", border: "1px solid rgba(124, 58, 237, 0.2)", background: "#e0e3ef", borderRadius: "1rem", fontWeight: "700" , cursor: "pointer"}}>
+            <Plus size={20}/>
+            <span>New Chat</span>
+          </button>
+          </div>
           <div className="history-section">
             <h4 className="history-label">YESTERDAY</h4>
             <a href="#" className="history-item"><MessageSquare/><span>Platform Marketplace 101</span></a>
@@ -39,6 +33,10 @@ const Chatbot = ()=>{
             <h4 className="history-label">LAST WEEK</h4>
             <a href="#" className="history-item"><MessageSquare/><span>Research about ui ux</span></a>
             <a href="#" className="history-item"><MessageSquare/><span>Give me a proposal for company...</span></a>
+          </div>
+          <div className="history-section">
+            <h4 className="history-label">LAST MONTH</h4>
+            <a href="#" className="history-item"><MessageSquare/><span>Platform Marketplace 101</span></a>
           </div>
           
           <div className="upgrade-card">

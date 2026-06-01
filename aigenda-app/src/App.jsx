@@ -27,6 +27,15 @@ import TextNote from './components/WorkspacesComponent/TextNote';
 import InFocusMode from './components/WorkspacesComponent/focusMode/InFocusMode';
 import SessionCompletion from './components/WorkspacesComponent/focusMode/SessionCompletion';
 import Setup from './components/WorkspacesComponent/focusMode/Setup';
+import Logout from './components/Authentication/Logout';
+import SharedSpaces from './components/CommunityComponent/SharedSpaces';
+import TeamMembers from './components/CommunityComponent/TeamMembers';
+import NotificationSett from './components/SettingsComponent/NotificationSett';
+import InviteFriend from './components/SettingsComponent/InviteFriend';
+import SettSecurity from './components/SettingsComponent/SettSecurity';
+import SettHelp from './components/SettingsComponent/SettHelp';
+import SystemUpdate from './components/SettingsComponent/SystemUpdate';
+import NotificationCenter from './components/ProfileComponent/NotificationCenter';
 function App() {
   return (
     <>
@@ -38,6 +47,7 @@ function App() {
         <Route path='/forgotpassword' element={<ForgotPassword/>}/>
         <Route path='/Auth/reset-pss' element={<RestPassword/>}/>
         <Route path='/Auth/confirm-email' element={<SignConfirmEmail/>}/>
+        <Route path='/logout' element={<Logout/>}/>
         {/* Workspace */}
         <Route path='/workspaceoverview' element={<WorkspaceOverview/>} />
         <Route path='/mainworkspace' element={<MainWorkspace/>}/>
@@ -56,13 +66,25 @@ function App() {
         <Route path='/sessionsetup' element={<Setup/>}/>
         {/*  */}
         <Route path='/dashboard' element={<Dashboard/>}/>
+        {/* Community */}
         <Route path='/community' element={<Community/>}/>
+        <Route path='/sharedspaces' element={<SharedSpaces/>}/>
+        <Route path='/teammember' element={<TeamMembers/>}/>
+        {/*  */}
         <Route path='/connect' element={<Connect/>}/>
+        {/* chatbot */}
         <Route path='/chatbot' element={<Chatbot/>}/>
+        {/* profile */}
         <Route path='/profile' element={<Profile/>}/>
+        <Route path='/notificationcenter' element={<NotificationCenter/>}/>
+        {/* Settings */}
         <Route path='/settings' element={<Settings/>}/>
+        <Route path='/notification' element={<NotificationSett/>}/>
+        <Route path='/invitefriend' element={<InviteFriend/>}/>
+        <Route path='/settsecurity' element={<SettSecurity/>}/>
         <Route path='/settAbout' element={<SettAbout/>}/>
-        
+        <Route path='/settHelp' element={<SettHelp/>}/>
+        <Route path='/systemupdate' element={<SystemUpdate/>}/>
       </Routes>
     </>
   )

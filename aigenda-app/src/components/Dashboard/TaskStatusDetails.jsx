@@ -17,7 +17,7 @@ const TaskStatusDetails = ({setOpenTSD})=>{
     return(
         <div className="overlay" onClick={() => setOpenTSD(false)}>
         <div className='tasks-status-container' onClick={(e) => e.stopPropagation()}>
-           <div className="card pie-card card-border-purple-light" style={{width:'400px'}}>
+        <div className="card pie-card card-border-purple-light" style={{width:'400px'}}>
         <h3>Tasks Status Breakdown</h3>
         <div className="pie-chart-wrapper">
         <ResponsiveContainer width="100%" height={200}>

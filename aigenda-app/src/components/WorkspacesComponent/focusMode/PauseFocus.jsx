@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const PauseFocus = ({setOpenPauseFocus})=>{
     return(
         <div className="overlay">
-           <div className="create-container" style={{width:'400px',alignItems:'center'}}>
+           <div className="create-container focus-setup-container">
              <div style={{display:'flex',alignItems:'center',justifyContent:'center',fontWeight:'500',backgroundColor:'#f5e8fe',width:'60px',height:'60px',borderRadius:'50%',color:'#7c3aed'}}><TimerIcon size={35}/></div>
              <h2 style={{marginBottom:'0'}}>You are currently in a focus session</h2>
              <p style={{color:'#3b3b3b',marginTop:'0'}}>Taking a break? Your session is more than halfway complete. Staying focused now will help you reach your daily goal.</p>
@@ -31,8 +31,8 @@ const PauseFocus = ({setOpenPauseFocus})=>{
                 <span style={{marginTop:'7px',color:'var(--dark-purple)'}}><Trophy size={18}/></span>
                 <p style={{color:'#64748b'}}>DAILY GOAL: 4 FOCUS HOURS</p>
              </div>
+             </div>
            </div>
-        </div>
     );
 };
 export default PauseFocus;

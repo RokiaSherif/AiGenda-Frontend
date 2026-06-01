@@ -1,8 +1,9 @@
 import "./home.css";
 import {StickyNote, Home, LayoutDashboard, Layers, Users, User, Link as LinkIcon, MessageSquare, Settings, LogOut} from 'lucide-react';
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 const Sidebar = ()=>{
+  const navigate = useNavigate();
     return(
         <div>
             <aside className="sidebar">
@@ -57,10 +58,10 @@ const Sidebar = ()=>{
                 <span className="user-plan">Pro Plan</span>
               </div>
             </div>
-            <button className="logout-btn">
+            {/* <button className="logout-btn" onClick={()=>{navigate('/logout')}}>
             <LogOut/>
               <span>Log out</span>
-            </button>
+            </button> */}
              </div>
             </aside>
         </div>

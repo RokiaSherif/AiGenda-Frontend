@@ -7,7 +7,7 @@ const Home = () => {
     <div className="app-container">
       <Sidebar />
       <main className="main-content" >
-        <Header />
+        {/* <Header /> */}
         <div className="page-container">
           <MainContent />
         </div>

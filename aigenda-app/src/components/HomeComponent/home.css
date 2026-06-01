@@ -9,7 +9,7 @@
   --primary: #7c3aed;
   --primary-light: #8b5cf6;
   --primary-soft: rgba(124, 58, 237, 0.05);
-  --bg-main: #f8fafc;
+  --bg-main: #F8F8F8;
   --bg-card: #ffffff;
   --text-main: #0f172a;
   --text-color-muted: #707070;
@@ -342,7 +342,8 @@
   .header .header-right {
     width: 100% !important;
     gap: 10px;
-     align-items: flex-start;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
   }
   .header .header-right .buttons {
     display: flex !important;

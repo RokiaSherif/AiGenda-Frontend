@@ -188,8 +188,7 @@ const DrawNote = () => {
   };
 
   return (
-  <div style={{ backgroundColor: '#f8f8f8', minHeight: '100vh', fontFamily: 'sans-serif', padding: '100px 20px 20px 20px' }}>
-      
+  <div style={{ backgroundColor: '#f8f8f8', minHeight: '100vh', fontFamily: 'sans-serif', padding: '100px 20px 20px 20px' }}>      
       {/* header */}
       <div style={{
         position: 'fixed',
@@ -234,10 +233,25 @@ const DrawNote = () => {
       
       {/* --- Toolbar --- */}
       <div style={{
-        display: 'flex', alignItems: 'center', gap: '8px', backgroundColor: 'white',position: 'fixed',top:'30px',
-        padding: '12px 20px', borderRadius: '16px', boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
-        width: 'max-content', margin: '0 auto 20px auto', position: 'relative', zIndex: 10, border: '1px solid #975fdd'
-      }}>
+display: 'flex', 
+  flexWrap: 'wrap',      // يسمح للأدوات تنزل سطر جديد لو الشاشة صغرت
+  alignItems: 'center', 
+  justifyContent: 'center', // يسنطر الأدوات جوه التول بار
+  gap: '8px', 
+  backgroundColor: 'white',
+  padding: '10px',       // قللنا البادينج شوية
+  borderRadius: '16px', 
+  boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+  width: '90%',          // ياخد عرض الشاشة المتاح
+  maxWidth: 'max-content', // بس ميزيدش عن حجم محتواه في الشاشات الكبيرة
+  position: 'fixed',
+  top: '85px',
+  left: '50%',
+  transform: 'translateX(-50%)',
+  zIndex: 1000, 
+  border: '1px solid #975fdd',
+  boxSizing: 'border-box'
+}}>
         <button onClick={() => changeTool('select')} style={btnStyle(activeTool === 'select')} title="Select Object">
           <MousePointer2 size={18} />
         </button>

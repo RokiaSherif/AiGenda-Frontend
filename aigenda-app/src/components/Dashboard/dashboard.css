@@ -312,6 +312,26 @@ gap: 20px;
 }
 
 /* styles of completed tasks details  */
+.dashboard-overlay{
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.4);
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.dashboard-overlay::-webkit-scrollbar{
+  width: 6px;
+}
 .table-box th,
 .table-box td{
   padding: 16px 20px; 
@@ -326,9 +346,10 @@ table tr:last-child{
   border: none;
 }
 table{
-  table-layout: fixed;
+  /* table-layout: fixed; */
   border-collapse: collapse;
-  padding: 15px;
+  width: 100%;
+  /* padding: 15px; */
 }
 .overlay .completed-tasks-container,
 .overlay .focus-details-container{
@@ -337,6 +358,15 @@ table{
   justify-content: center;
   gap: 20px;
 }
+.overlay .completed-tasks-container{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  min-height: fit-content;
+  width: 100%;
+  padding-bottom: 40px;
+}
 .overlay .table-box{
   background-color: white;
   border-radius: 20px;
@@ -344,6 +374,19 @@ table{
   box-sizing: border-box;
   border: 1px solid #9ca3af;
   box-shadow: 3px 5px 6px rgba(0, 0, 0, 0.3);
+}
+.overlay .table-box{
+  background-color: white;
+  border-radius: 20px;
+  padding: 15px;
+  box-sizing: border-box;
+  border: 1px solid #9ca3af;
+  box-shadow: 3px 5px 6px rgba(0, 0, 0, 0.3);
+
+  flex: 1;
+  min-width: 0;
+
+  overflow-x: auto;
 }
 .overlay .completed-tasks-container .table-box th{
   color: #6b7280;
@@ -359,6 +402,43 @@ table{
 .overlay .completed-tasks-container .table-box td:not(#taskName){
   color: #475467;
   font-weight: 500;
+}
+@media (max-width: 1020px){
+
+  .overlay .completed-tasks-container{
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .overlay .completed-tasks-container .card{
+    width: 100% !important;
+  }
+
+  .overlay .table-box{
+    width: 100%;
+  }
+}
+@media (max-width: 600px){
+
+  .table-box th,
+  .table-box td{
+    padding: 12px 10px;
+    font-size: 13px;
+  }
+
+  #taskName{
+    min-width: 180px;
+  }
+
+  .overlay{
+    padding: 10px;
+  }
+}
+@media (max-width: 1020px) {
+  .overlay .completed-tasks-container{
+    flex-direction: column;
+    /* overflow-y: scroll; */
+  }
 }
 /* focus session details styles */
 .overlay .focus-details-container .table-box table th{
